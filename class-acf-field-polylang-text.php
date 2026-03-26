@@ -1,23 +1,24 @@
 <?php
 
-// ACF_Field sınıfından miras alarak özel alan tipini oluştur
+if ( ! defined( 'ABSPATH' ) ) exit;
+
 class acf_field_polylang_text extends acf_field {
 
-    function initialize() {
-        
-        $this->name = 'polylang_text';
-        $this->label = __('Polylang Metin Alanı', 'acf-polylang-text');
-        $this->category = 'basic'; 
-        
-        // Varsayılan ayar değerlerini tanımla
+    public function __construct() {
+
+        $this->name     = 'polylang_text';
+        $this->label    = __( 'Polylang Metin Alanı', 'acf-polylang-text' );
+        $this->category = 'basic';
+
         $this->defaults = array(
-            'field_type'    => 'textarea', 
-            'rows'          => 5,          
-            // WYSIWYG Ayarları için varsayılanlar
-            'tabs'          => 'all',    // all (Görsel ve metin) veya visual (Görsel) veya text (Metin)
-            'toolbar'       => 'full',   // full veya basic veya diğer TinyMCE ayar dizileri
-            'media_buttons' => 1,        // Ortam yükleme tuşları (1: Göster, 0: Gizle)
+            'field_type'    => 'textarea',
+            'rows'          => 5,
+            'tabs'          => 'all',
+            'toolbar'       => 'full',
+            'media_buttons' => 1,
         );
+
+        parent::__construct();
     }
 
     /*
@@ -198,14 +199,7 @@ class acf_field_polylang_text extends acf_field {
         return $value; 
     }
     
-    /*
-    * load_value()
-    * Veritabanından gelen serileştirilmiş değeri, PHP dizisine (array) dönüştürür.
-    */
     function load_value( $value, $post_id, $field ) { 
         return $value; 
     }
 }
-
-// Sınıfı ACF'ye kaydetmek için bir nesne oluşturulması ZORUNLUDUR.
-new acf_field_polylang_text();
