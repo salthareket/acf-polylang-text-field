@@ -5,7 +5,7 @@
  * Version: 1.0.3
  * Author: Tolga Koçak
  * License: GPL2
- * Requires Plugins: advanced-custom-fields, polylang
+ * Requires Plugins: polylang
  */
 
 if ( ! defined( 'ABSPATH' ) ) exit;
