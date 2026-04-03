@@ -5,7 +5,6 @@
  * Version: 1.0.3
  * Author: Tolga Koçak
  * License: GPL2
- * Requires Plugins: polylang
  */
 
 if ( ! defined( 'ABSPATH' ) ) exit;
